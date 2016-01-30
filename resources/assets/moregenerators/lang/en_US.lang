@@ -1,0 +1,30 @@
+tile.moregenerators_basicSolar_0.name=INVALID ITEM!
+tile.moregenerators_basicSolar_1.name=Basic Solar Panel
+tile.moregenerators_basicSolar_2.name=Standard Solar Panel
+tile.moregenerators_basicSolar_3.name=Improved Solar Panel
+tile.moregenerators_basicSolar_4.name=Reinforced Solar Panel
+tile.moregenerators_basicSolar_5.name=Advanced Solar Panel
+tile.moregenerators_basicSolar_6.name=Ultimate Solar Panel
+
+tile.moregenerators_machineBlock_0.name=Crude Machine Frame
+tile.moregenerators_machineBlock_1.name=Basic Machine Frame
+tile.moregenerators_machineBlock_2.name=Standard Machine Frame
+tile.moregenerators_machineBlock_3.name=Improved Machine Frame
+tile.moregenerators_machineBlock_4.name=Reinforced Machine Frame
+tile.moregenerators_machineBlock_5.name=Advanced Machine Frame
+tile.moregenerators_machineBlock_6.name=Ultimate Machine Frame
+
+item.moregenerators_wrench_0.name=Crude Channel Locks
+item.moregenerators_wrench_1.name=Basic Channel Locks
+item.moregenerators_wrench_2.name=Standard Channel Locks
+item.moregenerators_wrench_3.name=Improved Channel Locks
+item.moregenerators_wrench_4.name=Reinforced Channel Locks
+item.moregenerators_wrench_5.name=Advanced Channel Locks
+item.moregenerators_wrench_6.name=Ultimate Channel Locks
+
+item.moregenerators_copperIngot.name=Copper Ingot
+item.moregenerators_ironSheet.name=Iron Sheet
+item.moregenerators_lightFocus.name=Light Focus
+item.moregenerators_superiorFocus.name=Superior Light Focus
+
+death.attack.moregenerators.wrenchBoom=%s had a mechanical failure.

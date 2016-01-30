@@ -1,0 +1,16 @@
+[
+{
+  "modid": "moregenerators",
+  "name": "More Generators",
+  "description": "A mod that adds more generators",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["adamsogm","Stico_53"],
+  "credits": "The Internet",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
