@@ -1,3 +1,7 @@
+tile.moregenerators_tungstenOre.name=Tungsten Ore
+tile.moregenerators_titaniumOre.name=Titanium Ore
+tile.moregenerators_copperOre.name=Copper Ore
+
 tile.moregenerators_basicSolar_0.name=INVALID ITEM!
 tile.moregenerators_basicSolar_1.name=Basic Solar Panel
 tile.moregenerators_basicSolar_2.name=Standard Solar Panel
@@ -23,8 +27,12 @@ item.moregenerators_wrench_5.name=Advanced Channel Locks
 item.moregenerators_wrench_6.name=Ultimate Channel Locks
 
 item.moregenerators_copperIngot.name=Copper Ingot
+item.moregenerators_tungstenIngot.name=Tungsten Ingot
+item.moregenerators_titaniumIngot.name=Titanium Ingot
 item.moregenerators_ironSheet.name=Iron Sheet
 item.moregenerators_lightFocus.name=Light Focus
 item.moregenerators_superiorFocus.name=Superior Light Focus
 
 death.attack.moregenerators.wrenchBoom=%s had a mechanical failure.
+
+itemGroup.moreGeneratorsTab=More Generators

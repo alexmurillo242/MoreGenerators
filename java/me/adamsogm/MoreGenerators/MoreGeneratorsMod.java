@@ -4,6 +4,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import me.adamsogm.MoreGenerators.blocks.BlockList;
 import me.adamsogm.MoreGenerators.items.ItemList;
 import net.minecraft.creativetab.CreativeTabs;
@@ -42,5 +43,6 @@ public class MoreGeneratorsMod {
 		BlockList.init();
 		ItemList.init();
 		RecipieManager.init();
+		GameRegistry.registerWorldGenerator(new OreGenerator(), 2);
 	}
 }

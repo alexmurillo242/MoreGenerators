@@ -62,6 +62,10 @@ public class RecipieManager {
 					'A', Blocks.dirt);
 		} // End of debugging recipes
 		
+		GameRegistry.addSmelting(BlockList.tungstenOre, new ItemStack(ItemList.tungstenIngot), 100);
+		GameRegistry.addSmelting(BlockList.copperOre, new ItemStack(ItemList.copperIngot), 100);
+		GameRegistry.addSmelting(BlockList.titaniumOre, new ItemStack(ItemList.titaniumIngot), 100);
+		
 		GameRegistry.addRecipe(new ItemStack(ItemList.ironSheet, 2), 
 				"III",
 				'I', Items.iron_ingot);
