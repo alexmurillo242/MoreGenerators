@@ -13,11 +13,19 @@ public class OreGenerator implements IWorldGenerator {
 	WorldGenMinable copperGen;
 	WorldGenMinable tungstenGen;
 	WorldGenMinable titaniumGen;
+	WorldGenMinable tinGen;
+	WorldGenMinable leadGen;
+	WorldGenMinable antimonyGen;
+	WorldGenMinable nickelGen;
 
 	public OreGenerator() {
 		copperGen = new WorldGenMinable(BlockList.copperOre, 20);
 		tungstenGen = new WorldGenMinable(BlockList.tungstenOre, 20);
 		titaniumGen = new WorldGenMinable(BlockList.titaniumOre, 20);
+		tinGen = new WorldGenMinable(BlockList.tinOre, 20);
+		leadGen = new WorldGenMinable(BlockList.leadOre, 20);
+		antimonyGen = new WorldGenMinable(BlockList.leadOre, 20);
+		nickelGen = new WorldGenMinable(BlockList.nickelOre, 20);
 	}
 
 	@Override
@@ -28,6 +36,10 @@ public class OreGenerator implements IWorldGenerator {
 			runGenerator(copperGen, world, random, chunkX, chunkZ, 100, 0, 120);
 			runGenerator(tungstenGen, world, random, chunkX, chunkZ, 100, 0, 120);
 			runGenerator(titaniumGen, world, random, chunkX, chunkZ, 100, 0, 120);
+			runGenerator(tinGen, world, random, chunkX, chunkZ, 100, 0, 120);
+			runGenerator(leadGen, world, random, chunkX, chunkZ, 100, 0, 120);
+			runGenerator(antimonyGen, world, random, chunkX, chunkZ, 100, 0, 120);
+			runGenerator(antimonyGen, world, random, chunkX, chunkZ, 100, 0, 120);
 			break;
 		default:
 			break;

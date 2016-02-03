@@ -1,6 +1,11 @@
 tile.moregenerators_tungstenOre.name=Tungsten Ore
 tile.moregenerators_titaniumOre.name=Titanium Ore
 tile.moregenerators_copperOre.name=Copper Ore
+tile.moregenerators_tinOre.name=Tin Ore
+tile.moregenerators_leadOre.name=Lead Ore
+tile.moregenerators_antimonyOre.name=Antimony Ore
+tile.moregenerators_nickelOre.name=Nickel Ore
+tile.moregenerators_crucible.name=Crucible
 
 tile.moregenerators_basicSolar_0.name=INVALID ITEM!
 tile.moregenerators_basicSolar_1.name=Basic Solar Panel
@@ -32,7 +37,34 @@ item.moregenerators_titaniumIngot.name=Titanium Ingot
 item.moregenerators_ironSheet.name=Iron Sheet
 item.moregenerators_lightFocus.name=Light Focus
 item.moregenerators_superiorFocus.name=Superior Light Focus
+item.moregenerators_standardCircuit.name=Standard Circuit
+item.moregenerators_solder.name=Solder
+item.moregenerators_tinNugget.name=Tin Nugget
+item.moregenerators_leadNugget.name=Lead Nugget
+item.moregenerators_antimonyNugget.name=Antimony Nugget
+item.moregenerators_antimonyIngot.name=Antimony Ingot
+item.moregenerators_leadIngot.name=Lead Ingot
+item.moregenerators_tinIngot.name=Tin Ingot
+item.moregenerators_copperNugget.name=Copper Nugget
+item.moregenerators_titaniumNugget.name=Titanium Nugget
+item.moregenerators_tungstenNugget.name=Tungsten Nugget
+item.moregenerators_leadlessSolder.name=Leadless Solder
+item.moregenerators_advancedCircuit.name=Advanced Circuit
+item.moregenerators_copperSheet.name=Copper Sheet
+item.moregenerators_titaniumSheet.name=Titanium Sheet
+item.moregenerators_tungstenHeatSink.name=Tungsten Heat Sink
+item.moregenerators_netherPlating.name=Nether Plating
+item.moregenerators_steelIngot.name=Steel Ingot
+item.moregenerators_steelSheet.name=Steel Sheet
+item.moregenerators_bronzeIngot.name=Bronze Ingot
+item.moregenerators_bronzeSheet.name=Bronze Sheet
+item.moregenerators_nickelNugget.name=Nickel Nugget
+item.moregenerators_nickelIngot.name=Nickel Ingot
+item.moregenerators_netherCore.name=Nether Core
 
 death.attack.moregenerators.wrenchBoom=%s had a mechanical failure.
 
 itemGroup.moreGeneratorsTab=More Generators
+
+container.inventory=Player Inventory
+container.moregenerators_crucibleContainer=Crucible

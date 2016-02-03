@@ -35,5 +35,16 @@ public class BlockHandler extends Block {
 		setHarvestLevel(harvestToolClass, harvestLevel);
 		setResistance(resistance);
 	}
+	public BlockHandler(Material material, String unlocalizedName, float hardness,
+			String harvestToolClass, int harvestLevel, float resistance) {
+		super(material);
+		this.unlocName = unlocalizedName;
+		setBlockName(MoreGeneratorsMod.MODID + "_" + unlocalizedName);
+		setCreativeTab(moGenTab);
+		setBlockTextureName(MoreGeneratorsMod.MODID + ":" + unlocalizedName);
+		setHardness(hardness);
+		setHarvestLevel(harvestToolClass, harvestLevel);
+		setResistance(resistance);
+	}
 
 }
