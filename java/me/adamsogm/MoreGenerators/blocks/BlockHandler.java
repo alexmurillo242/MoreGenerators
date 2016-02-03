@@ -5,7 +5,6 @@ import static me.adamsogm.MoreGenerators.MoreGeneratorsMod.moGenTab;
 import me.adamsogm.MoreGenerators.MoreGeneratorsMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockHandler extends Block {
 

@@ -55,6 +55,7 @@ public class WrenchItem extends ItemHandler {
 		return icons[meta];
 	}
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public void getSubItems(Item item, CreativeTabs tab, List list) {
 		for (int i = 0; i < icons.length; i ++) {

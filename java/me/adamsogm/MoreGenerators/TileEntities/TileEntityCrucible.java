@@ -1,7 +1,9 @@
 package me.adamsogm.MoreGenerators.TileEntities;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import me.adamsogm.MoreGenerators.AlloyRecipe;
+import me.adamsogm.MoreGenerators.AlloyRecipeRegistry;
 import me.adamsogm.MoreGenerators.MoreGeneratorsMod;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -121,13 +123,13 @@ public class TileEntityCrucible extends TileEntity implements IInventory {
 
 	@Override
 	public boolean isItemValidForSlot(int slot, ItemStack item) {
-		return slot != 3;
+		return slot != 3 && (slot == 2 ? GameRegistry.getFuelValue(item) > 0 : true);
 	}
 
 	@Override
 	public void updateEntity() {
 		if(!this.worldObj.isRemote){
-			if(canCook()){
+			if(hasValidRecipe()){
 				AlloyRecipe recipe = getRecipe();
 				decrStackSize(0, recipe.getComponent(getStackInSlot(0).getItem()).stackSize);
 				decrStackSize(1, recipe.getComponent(getStackInSlot(1).getItem()).stackSize);
@@ -140,6 +142,14 @@ public class TileEntityCrucible extends TileEntity implements IInventory {
 				
 			}
 		}
+	}
+	
+	private boolean hasValidRecipe(){
+		return AlloyRecipeRegistry.isValidInput(getStackInSlot(0), getStackInSlot(1)) && getStackInSlot(2) != null;
+	}
+	
+	private AlloyRecipe getRecipe(){
+		return AlloyRecipeRegistry.getAlloyRecipeFrom(getStackInSlot(0), getStackInSlot(1));
 	}
 
 	@Override

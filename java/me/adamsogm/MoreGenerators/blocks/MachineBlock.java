@@ -52,6 +52,7 @@ public class MachineBlock extends BlockHandler implements WrenchableBlock {
 		}
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void getSubBlocks(Item item, CreativeTabs tab, List list) {
 		for (int i = 0; i < 7; i++) {

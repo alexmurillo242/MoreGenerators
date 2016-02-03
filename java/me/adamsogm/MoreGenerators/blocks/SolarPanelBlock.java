@@ -6,8 +6,6 @@ import java.util.Random;
 
 import me.adamsogm.MoreGenerators.MoreGeneratorsMod;
 import me.adamsogm.MoreGenerators.ToolTier;
-import me.adamsogm.MoreGenerators.items.ItemList;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -30,6 +28,7 @@ public class SolarPanelBlock extends BlockHandler implements WrenchableBlock{
 		super(Material.rock, UNLOCALIZED_NAME, .10f, "pickaxe", 0, 10, true);
 	}
 	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void getSubBlocks(Item item, CreativeTabs tab, List list) {
 		for (int i = 1; i < 7; i++) {
@@ -68,7 +67,6 @@ public class SolarPanelBlock extends BlockHandler implements WrenchableBlock{
 				//world.createExplosion(null, x, y, z, 10, false);
 				Explosion explosion = new Explosion(world, player, x, y, z, 10);
 				DamageSource ds = new DamageSource(MoreGeneratorsMod.MODID + ".wrenchBoom");
-				ds.setExplosionSource(explosion);
 				explosion.doExplosionA();
 				explosion.doExplosionB(true);
 				player.attackEntityFrom(ds, 10);
