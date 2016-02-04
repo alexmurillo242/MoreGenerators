@@ -30,7 +30,7 @@ public class GuiTileEntityCrucible extends GuiContainer {
 		int k = (this.width - this.xSize) / 2;
 		int l = (this.height - this.ySize) / 2;
 		this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
-		if (this.te.isBurning() || true) {
+		if (this.te.isBurning()) {
 			int i1 = this.te.getBurnTimeRemainingScaled(13);
 			this.drawTexturedModalRect(k + 56, l + 36 + 12 - i1, 176, 12 - i1, 14, i1 + 1);
 			i1 = this.te.getCookProgressScaled(24);

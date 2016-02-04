@@ -24,7 +24,7 @@ public class AlloyRecipe {
 					return false;
 				}
 			} else if (stack1.getItem() == component2.getItem()) {
-				if (stack1.stackSize > component2.stackSize && stack2.stackSize > component1.stackSize) {
+				if (stack1.stackSize >= component2.stackSize && stack2.stackSize >= component1.stackSize) {
 					return true;
 				} else {
 					return false;

@@ -4,7 +4,6 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import me.adamsogm.MoreGenerators.AlloyRecipe;
 import me.adamsogm.MoreGenerators.AlloyRecipeRegistry;
 import me.adamsogm.MoreGenerators.MoreGeneratorsMod;
-import net.minecraft.block.BlockFurnace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -15,12 +14,12 @@ import net.minecraft.tileentity.TileEntityFurnace;
 
 public class TileEntityCrucible extends TileEntity implements IInventory {
 
-//	private static final int COOK_TIME = 200;
+	// private static final int COOK_TIME = 200;
 	private ItemStack[] inventory;
 	private String customName;
-	private int burnTime;
-	private int cookTime;
-	private int currentItemBurnTime;
+	public int burnTime;
+	public int cookTime;
+	public int currentItemBurnTime;
 
 	public TileEntityCrucible() {
 		inventory = new ItemStack[this.getSizeInventory()];
@@ -129,7 +128,6 @@ public class TileEntityCrucible extends TileEntity implements IInventory {
 	}
 
 	public int getCookProgressScaled(int scale) {
-		System.out.println("Cook progress " + cookTime);
 		return cookTime * scale / 200;
 	}
 
@@ -139,12 +137,37 @@ public class TileEntityCrucible extends TileEntity implements IInventory {
 	 * is exhausted and the passed value means that the item is fresh
 	 */
 	public int getBurnTimeRemainingScaled(int scale) {
-		System.out.println("Burn time " + burnTime);
 		if (this.currentItemBurnTime == 0) {
 			this.currentItemBurnTime = 200;
 		}
 
 		return burnTime * scale / this.currentItemBurnTime;
+	}
+
+	private boolean canSmelt() {
+		if (this.inventory[0] == null || this.inventory[1] == null) {
+			return false;
+		} else {
+			AlloyRecipe recipe = AlloyRecipeRegistry.getAlloyRecipeFrom(inventory[0], inventory[1]);
+			if (recipe == null)
+				return false;
+			ItemStack itemstack = recipe.getResult();
+			if (itemstack == null)
+				return false;
+			if (this.inventory[3] == null)
+				return true;
+			if (!this.inventory[3].isItemEqual(itemstack))
+				return false;
+			int result = inventory[3].stackSize + itemstack.stackSize;
+			return result <= getInventoryStackLimit() && result <= this.inventory[3].getMaxStackSize(); // Forge
+																										// BugFix:
+																										// Make
+																										// it
+																										// respect
+																										// stack
+																										// sizes
+																										// properly.
+		}
 	}
 
 	public void updateEntity() {
@@ -156,8 +179,9 @@ public class TileEntityCrucible extends TileEntity implements IInventory {
 		}
 
 		if (!this.worldObj.isRemote) {
-			if (this.burnTime != 0 || this.inventory[2] != null && this.inventory[0] != null && this.inventory[1] != null) {
-				if (this.burnTime == 0 && this.hasValidRecipe()) {
+			if (this.burnTime != 0
+					|| this.inventory[2] != null && this.inventory[0] != null && this.inventory[1] != null) {
+				if (this.burnTime == 0 && this.canSmelt()) {
 					this.currentItemBurnTime = this.burnTime = TileEntityFurnace.getItemBurnTime(this.inventory[2]);
 
 					if (this.burnTime > 0) {
@@ -167,16 +191,14 @@ public class TileEntityCrucible extends TileEntity implements IInventory {
 							--this.inventory[2].stackSize;
 
 							if (this.inventory[2].stackSize == 0) {
-								this.inventory[2] = inventory[2].getItem()
-										.getContainerItem(inventory[2]);
+								this.inventory[2] = inventory[2].getItem().getContainerItem(inventory[2]);
 							}
 						}
 					}
 				}
 
-				if (this.isBurning() && this.hasValidRecipe()) {
+				if (this.isBurning() && this.canSmelt()) {
 					++this.cookTime;
-
 					if (this.cookTime == 200) {
 						this.cookTime = 0;
 						this.smeltItem();
@@ -189,8 +211,6 @@ public class TileEntityCrucible extends TileEntity implements IInventory {
 
 			if (flag != this.burnTime > 0) {
 				flag1 = true;
-				BlockFurnace.updateFurnaceBlockState(this.burnTime > 0, this.worldObj, this.xCoord, this.yCoord,
-						this.zCoord);
 			}
 		}
 
@@ -246,11 +266,6 @@ public class TileEntityCrucible extends TileEntity implements IInventory {
 		} else {
 			setInventorySlotContents(3, new ItemStack(recipe.getResult().getItem(), recipe.getResult().stackSize));
 		}
-	}
-
-	private boolean hasValidRecipe() {
-		return AlloyRecipeRegistry.isValidInput(getStackInSlot(0), getStackInSlot(1))
-				&& isItemValidForSlot(2, getStackInSlot(2));
 	}
 
 	private AlloyRecipe getRecipe() {
