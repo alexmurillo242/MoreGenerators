@@ -21,8 +21,10 @@ public class MoreGeneratorsGuiHandler implements IGuiHandler{
 
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-	    if (ID == TILE_ENTITY_GUI_CRUCIBLE_ID)
+	    if (ID == TILE_ENTITY_GUI_CRUCIBLE_ID){
+	    	System.out.println("Tile entity located at " + x + ", " + y + ", " + z);
 	        return new GuiTileEntityCrucible(player.inventory, (TileEntityCrucible) world.getTileEntity(x, y, z));
+	    }
 
 	    return null;
 	}

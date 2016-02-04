@@ -59,6 +59,7 @@ public class MoreGeneratorsMod {
 		ItemList.init();
 		RecipeManager.init();
 		TileEntityRegistry.init();
+		AlloyRecipeRegistry.init();
 		GameRegistry.registerWorldGenerator(new OreGenerator(), 2);
 	}
 }

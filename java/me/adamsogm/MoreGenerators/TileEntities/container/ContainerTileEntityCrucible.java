@@ -14,10 +14,10 @@ public class ContainerTileEntityCrucible extends Container{
 	public ContainerTileEntityCrucible(IInventory playerInv, TileEntityCrucible tec) {
 		this.tec = tec;
 		// Tile Entity, Slot 0-3, Slot IDs 0-3
-	    addSlotToContainer(new Slot(tec, 0, 42, 16));
-	    addSlotToContainer(new Slot(tec, 1, 68, 16));
-	    addSlotToContainer(new Slot(tec, 2, 55, 52));
-	    addSlotToContainer(new Slot(tec, 3, 115, 34));
+	    addSlotToContainer(new Slot(tec, 0, 43, 17));
+	    addSlotToContainer(new Slot(tec, 1, 69, 17));
+	    addSlotToContainer(new Slot(tec, 2, 56, 53));
+	    addSlotToContainer(new SlotOutput(tec, 3, 116, 35));
 
 	    // Player Inventory, Slot 9-35, Slot IDs 26-29
 	    for (int y = 0; y < 3; ++y) {
